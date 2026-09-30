@@ -8,6 +8,7 @@ spec:
     image: nginx
   - name: almalinux
     image: almalinux
+    command: ["sleep", "1000"]
     resources:
       requests:
         memory: 68Mi
