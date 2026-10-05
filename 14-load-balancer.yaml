@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: service-loadbalance
 spec: 
-  type: loadBalancer
+  type: LoadBalancer
   selector: # labels are used as selectors
     Project: expense 
     Component: backend
