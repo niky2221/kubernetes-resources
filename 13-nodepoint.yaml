@@ -1,0 +1,33 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: serice-nodeport
+spec: 
+  type: NodePort
+  selector: # labels are used as selectors
+    Project: expense 
+    Component: backend
+    environment: dev
+    demo: np
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    NodePort: 30007
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: backend
+  labels:
+    Project: expense
+    Component: backend
+    environment: dev
+    demo: np
+spec:
+  containers: 
+  - name: nginx
+    image: nginx
+  
+
+
