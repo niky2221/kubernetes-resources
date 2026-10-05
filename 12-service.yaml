@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: serice-pod
 spec: 
-  selector:
+  selector: # labels are used as selectors
     Project: expense 
     Component: backend
     environment: dev
@@ -23,7 +23,7 @@ metadata:
 spec:
   containers: 
   - name: nginx
-    image:
+    image: nginx
   
 
 
