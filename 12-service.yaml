@@ -1,0 +1,29 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: serice-pod
+spec: 
+  selector:
+    Project: expense 
+    Component: backend
+    environment: dev
+ports:
+- protocol: TCP
+  port: 80
+  targetport: 8080
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx
+  labels:
+    Project: expense
+    Component: backend
+    environment: dev
+spec:
+  containers: 
+  - name: nginx
+    image: nginx
+  
+
+
