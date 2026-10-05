@@ -7,10 +7,10 @@ spec:
     Project: expense 
     Component: backend
     environment: dev
-ports:
-- protocol: TCP
-  port: 80
-  targetport: 8080
+  ports:
+  - protocol: TCP
+    port: 80
+    targetport: 8080
 ---
 kind: Pod
 apiVersion: v1
@@ -23,7 +23,7 @@ metadata:
 spec:
   containers: 
   - name: nginx
-    image: nginx
+    image:
   
 
 
