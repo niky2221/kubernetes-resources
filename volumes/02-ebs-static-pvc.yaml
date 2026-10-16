@@ -2,8 +2,6 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: ebs-static-pvclaim
-  labels:
-    purpose: pvc-test
 spec:
   storageClassName: ""
   volumeName: ebs-static-pv
@@ -17,6 +15,8 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: nginx-pv
+  labels:
+    purpose: pvc-test
 spec:
   containers:
   - name: nginx
