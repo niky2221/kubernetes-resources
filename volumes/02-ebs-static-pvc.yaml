@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: ebs-static-pvclaim
+  name: ebs-static
 spec:
   storageClassName: ""
   volumeName: ebs-static-pv
@@ -14,9 +14,9 @@ spec:
 kind: Pod
 apiVersion: v1
 metadata:
-  name: nginx-pv
+  name: ebs-static
   labels:
-    purpose: pvc-test
+    purpose: "pvc-test"
 spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1a
@@ -29,7 +29,7 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static-pvclaim
+      claimName: ebs-static
 ---
 kind: Service
 apiVersion: v1
@@ -38,7 +38,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-      purpose: pvc-test
+      purpose: "pvc-test"
   ports:
   - protocol: TCP
     port: 80
