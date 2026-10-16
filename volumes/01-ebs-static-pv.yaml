@@ -1,5 +1,5 @@
-kind: PersistantVolume
 apiVersion: v1
+kind: PersistentVolume
 metadata:
   name: ebs-static-pv
 spec:
