@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce
-  Capacity:
+  capacity:
     storage: 20Gi
   csi:
     driver: ebs.csi.aws.com
