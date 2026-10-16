@@ -38,7 +38,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-      purpose: "pvc-test"
+    purpose: "pvc-test"
   ports:
   - protocol: TCP
     port: 80
