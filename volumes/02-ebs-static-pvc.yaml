@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ebs-static-pvclaim
+spec:
+  storageClassName: ""
+  volumeName: ebs-static-pv
+  accessModes: 
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 15Gi
