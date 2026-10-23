@@ -26,7 +26,7 @@ spec:
       mountPath: /usr/share/nginx
   volumes:
   - name: Persistant-storage
-    persistantVolumeClaim:
+    persistentVolumeClaim:
       claimName: sc-dynamic-claim
 ---
 kind: Service
