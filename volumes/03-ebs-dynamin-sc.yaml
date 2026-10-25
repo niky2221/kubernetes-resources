@@ -4,3 +4,5 @@ metadata:
   name: ebs-sc
 provisioner: ebs.csi.aws.com
 volumeBindingMode: WaitForFirstConsumer
+
+### In dynamic provisioning we dont create volumes, we create storageclass, this is elastic type, it will create pv automatically, when we create pvc

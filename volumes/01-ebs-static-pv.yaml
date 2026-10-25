@@ -11,3 +11,6 @@ spec:
     driver: ebs.csi.aws.com
     fsType: ext4
     volumeHandle: vol-014c6c96423ca016b
+
+### In Static provisioning we create volumes first in aws, after that we create pv and pvc manually, in this static, volume zone id and pod zone id must be same zone
+## first give ebscsi drivers permissions in node I AM roles && install ebscsi drivers in server
