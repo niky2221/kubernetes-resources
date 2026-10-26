@@ -6,7 +6,7 @@ metadata:
     name: statefulset
     app: nginx
 spec:
-  clusterIp: none
+  clusterIp: None
   ports:
   - port: 80
     name: web.
