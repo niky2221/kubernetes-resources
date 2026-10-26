@@ -6,10 +6,10 @@ metadata:
     name: statefulset
     app: nginx
 spec:
-  clusterIp: None
   ports:
   - port: 80
-    name: web.
+    name: web
+  clusterIp: None
   selector:
     name: statefulset
     app: nginx
@@ -38,7 +38,7 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
-          name: web.
+          name: web
       volumeMounts:
       - name: www
         mountPath: /usr/share/nginx/html
@@ -46,7 +46,7 @@ volumeClaimTemplate:
 - metadata:
     name: www
   spec:
-    accessModes: ["ReadWriteOnce"]
+    accessModes: [ "ReadWriteOnce" ]
     storageClassName: ebs-sc
     resources:
       requests:
