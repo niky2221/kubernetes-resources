@@ -33,7 +33,7 @@ spec:
       volumes:
       - name: nginx-storage
         persistentVolumeClaim:
-        storageClassName: "ebs-sc"
+        claimName: "ebs-sc"
 ---
 kind: Service
 apiVersion: v1
