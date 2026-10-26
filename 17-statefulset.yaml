@@ -10,7 +10,6 @@ spec:
   - port: 80
     name: web
   clusterIP: None
-  type: ClusterIp
   selector:
     app: nginx
 ---
