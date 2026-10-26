@@ -14,7 +14,7 @@ spec:
     name: statefulset
     app: nginx
 ---
-kind: Statefulset
+kind: StatefulSet
 apiVersion: apps/v1
 metadata: 
   name: nginx
@@ -51,7 +51,7 @@ volumeClaimTemplate:
     resources:
       requests:
         storage: 1Gi
-        
+
       
 
 
