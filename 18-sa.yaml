@@ -8,7 +8,7 @@ spec:
   serviceAccount: expense-secret-serviceaccount
   initContainers:
   - name: awscli      # we need aws cli image for interact with aws account, we need secrets from aws, so we need image of aws
-    image: amazon/aws-cli
+    image: amazon/aws-cli:2.42.4
     command: ['sh', '-c', 'aws secretsmanager get-secret-value \ --secret-id expense/Secret/Mysql --query SecretString --output text > /secrets/.env '] # search in google - aws get value secret command   
     volumeMounts:
     - mountPath: /secrets 
