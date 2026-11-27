@@ -1,7 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-    name: Pod-initcontainer
+    name: pod-initcontainer
     labels:
         purpose: init-container-demo
 spec:
