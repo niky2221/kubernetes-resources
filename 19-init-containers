@@ -11,4 +11,4 @@ spec:
     initContainers:
     - name: init-myapp
       image: busybox:1.28
-      command: ['sh', '-c', "until nslookup gosdddd.com; do echo waiting for myapp; sleep 5; done"]
+      command: ['sh', '-c', "until nslookup google.com; do echo waiting for myapp; sleep 5; done"]
