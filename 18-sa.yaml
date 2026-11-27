@@ -5,8 +5,23 @@ metadata:
   labels:
     purpose: service-account
 spec:
-  serviceAccountName: expense-secret-serviceaccount
+  serviceAccount: expense-secret-serviceaccount
+  initContainers:
+  - name: awscli      # we need aws cli image for interact with aws account, we need secrets from aws, so we need image of aws
+    image: amazon/aws-cli
+    command: ['sh', '-c', 'aws secretsmanager get-secret-value \ --secret-id expense/Secret/Mysql --query SecretString --output text > /secrets/.env '] # search in google - aws get value secret command   
+    volumeMounts:
+    - mountPath: /secrets 
+      name: secret-volume
   containers:
   - name: nginx
     image: nginx
-    
+    volumeMounts:
+    - mountPath: /secrets 
+      name: secret-volume
+  volumes:
+  - name: secret-volume
+    emptyDir: {}
+
+
+    # emptyDir :-- pod temporary storage, accessible until pod lives, all containers in the pod can access init container stores the secret in emptyDir and completes. then main container can access that secrets.
