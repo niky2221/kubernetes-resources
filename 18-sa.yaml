@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: pod-secret-sa
+  labels:
+    purpose: service-account
+spec:
+  serviceAccountName: expense-secret-serviceaccount
+  containers:
+  - name: nginx
+    image: nginx
+    

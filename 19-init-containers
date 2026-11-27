@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+    name: Pod-initcontainer
+    labels:
+        purpose: init-container-demo
+spec:
+    containers:
+    - name: nginx
+      image: nginx
+    initContainers:
+    - name: init-myapp
+      image: busybox:1.28
+      command: ['sh', '-c', "until nslookup gosdddd.com; do echo waiting for myapp; sleep 5; done"]
